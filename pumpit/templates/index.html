@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="jumbotron">
+        <h1>pumpit</h1>
+        <p class="lead">pumpit is a free web app for sizing pumps for your plant design projects.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h2>System overview</h2>
+            <div class="container">
+                <object id="svg-object-system" data=".\static\svg\system.svg" type="image/svg+xml"></object>
+            </div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>System definition</h2>
+            {% include 'pipingtable.html' %}
+        </div>
+    </div>
+
+{% endblock %}
+{% block scripts %}
+    <script src="./static/scripts/addrmtablerow.js"></script>
+{% endblock %}
