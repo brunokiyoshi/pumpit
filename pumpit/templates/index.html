@@ -14,11 +14,23 @@
                 <object id="svg-object-system" data=".\static\svg\system.svg" type="image/svg+xml"></object>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="vflowlabel">Volume flow (m³/h)</label>
+                <input type="number" class="form-control" id="vflowinput" aria-describedby="vflowhelp" placeholder="1">
+                <small id="vflowhelp" class="form-text text-muted">Pump throughput in cubic meters per hour.</small>
+            </div>
         </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <h2>System definition</h2>
             {% include 'pipingtable.html' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {% include 'fittingstable.html' %}
         </div>
     </div>
 

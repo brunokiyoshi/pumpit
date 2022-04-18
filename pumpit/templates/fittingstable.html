@@ -1,10 +1,10 @@
 <div class="card">
     <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
-        Pipe segments
+        Fittings
     </h3>
     <div class="card-body">
-        <div id="pipingtable" class="table-editable">
-            <span class="table-add float-right mb-3 mr-2" id="table-add-piping">
+        <div id="fittingstable" class="table-editable">
+            <span class="table-add float-right mb-3 mr-2" id="table-add-fittings">
                 <a href="#!" class="text-success">
                     <i class="fas fa-plus fa-2x" aria-hidden="true">
 
@@ -18,16 +18,13 @@
                     <th class="text-center">Tags</th>
                     <th class="text-center">Description</th>
                     <th class="text-center">Type</th>
-                    <th class="text-center">Material</th>
-                    <th class="text-center">Lenght (m)</th>
-                    <th class="text-center">Δz (m)</th>
                     <th class="text-center">ΔP(kPa)</th>
                     <th class="text-center">Move</th>
                     <th class="text-center">Remove</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% include 'stdtablerow.html' %}
+                {% include 'stdfittingstablerow.html' %}
 
                 </tbody>
             </table>
