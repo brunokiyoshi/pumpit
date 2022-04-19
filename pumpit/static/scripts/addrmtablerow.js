@@ -32,6 +32,9 @@ for (let i = 0; i < tableIDs.length; i++) {
             if ($tableID.find('tbody tr').length > 1) {
                 $(this).parents('tr').detach();
             }
+            // if ($tableID.find('tbody tr').length === 2) {
+            //     $(this).find('btn').attr("disabled", true);
+            // } TODO: find way to disable button of only remaining pipe row and reenable it when it's not the only one anymore
         } else {
             $(this).parents('tr').detach();
         }

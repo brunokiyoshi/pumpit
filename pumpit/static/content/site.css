@@ -41,3 +41,7 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+.table-editable {
+    overflow-x: auto;
+    white-space: nowrap;
+}
