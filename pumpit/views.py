@@ -3,18 +3,22 @@ Routes and views for the flask application.
 """
 
 from datetime import datetime
-from flask import render_template, send_from_directory
+from flask import render_template, send_from_directory, Markup
 from pumpit import app
+
 
 @app.route('/')
 @app.route('/home')
 def home():
     """Renders the home page."""
+    systemsvg = open('pumpit\\static\\svg\\system.svg').read()
     return render_template(
         'index.html',
         title='Home Page',
         year=datetime.now().year,
+        systemsvg=Markup(systemsvg)
     )
+
 
 @app.route('/contact')
 def contact():
@@ -25,6 +29,7 @@ def contact():
         year=datetime.now().year,
         message='Your contact page.'
     )
+
 
 @app.route('/about')
 def about():
@@ -37,7 +42,7 @@ def about():
     )
 
 
-@app.route('/getstdtablerow')
+@app.route('/getstdfittingstablerow')
 def getstdtablerow():
     """Returns a new standard row."""
-    return send_from_directory("templates", "stdtablerow.html")
+    return render_template("stdfittingstablerow.html")

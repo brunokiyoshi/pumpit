@@ -7,25 +7,32 @@ for (let i = 0; i < tableIDs.length; i++) {
     const $BTN = $('#export-btn');
     const $EXPORT = $('#export');
 
-    const newTr = '<tr></tr>' // TODO: find way to get standard row from html files
+
     // TODO: use better data structure instead of relying on indexes matching
     $(tableAddIDs[i]).on('click', 'i', () => {
         const $clone = $tableID.find('tbody tr').last().clone(true).removeClass('hide table-line');
 
         if ($tableID.find('tbody tr').length === 0) {
-
-            $('tbody').append(newTr);
+            fetch("/getstdfittingstablerow").then(function (response) {
+                return response.text();
+            }).then(function (data) {
+                $("#fittingstable").find('tbody').append(data);
+            }).catch(function () {
+                console.log("Couldn't fetch std table row");
+            });
         }
+
+
 
         $tableID.find('table').append($clone);
     });
 
     $tableID.on('click', '.table-remove', function () {
-        if (i===0){
+        if (i === 0) {
             if ($tableID.find('tbody tr').length > 1) {
                 $(this).parents('tr').detach();
             }
-        }else {
+        } else {
             $(this).parents('tr').detach();
         }
 
