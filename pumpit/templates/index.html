@@ -2,40 +2,91 @@
 
 {% block content %}
 
-    <div class="jumbotron">
+    <div class="h-100 p-5 text-white bg-dark rounded-3">
         <h1>pumpit</h1>
         <p class="lead">pumpit is a free web app for sizing pumps for your plant design projects.</p>
     </div>
+    <div class="container ">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+                <h2>System overview</h2>
+            </div>
+        </div>
 
-    <div class="row">
-        <div class="col-md-8">
-            <h2>System overview</h2>
-            <div class="container">
-{#                <object id="svg-object-system" data=".\static\svg\system.svg" type="image/svg+xml"></object>#}
-                {{ systemsvg }}
+
+        <div class="row align-items-center">
+            <div class="col-md-8">
+
+                <div class="container">
+                    {{ systemsvg }}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <form id="system-form" action="/generatereport" method="post">
+                    <div class="form-group">
+                        <label for="fluidlabel">Fluid name</label>
+                        <input type="text" class="form-control" id="fluidinput" aria-describedby="fluidhelp"
+                               placeholder="Water">
+                        <small id="fluidhelp" class="form-text text-muted">Fluid to be displaced.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="temperaturelabel">Temperature (ºC)</label>
+                        <input type="number" class="form-control" id="temperatureinput"
+                               aria-describedby="temperaturehelp"
+                               placeholder="20">
+                        <small id="temperaturehelp" class="form-text text-muted">Service temperature in degrees
+                            Celsius.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="densitylabel">Density (kg/m³)</label>
+                        <input type="number" class="form-control" id="densityinput" aria-describedby="densityhelp"
+                               placeholder="998.21">
+                        <small id="densityhelp" class="form-text text-muted">Fluid density in kilogram per cubic
+                            meter.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="viscositylabel">Viscosity (Pa.s)</label>
+                        <input type="number" class="form-control" id="viscosityinput" aria-describedby="viscosityhelp"
+                               placeholder="0.0010016">
+                        <small id="viscosityhelp" class="form-text text-muted">Fluid dynamic viscosity in
+                            Pascal-second.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vflowlabel">Volume flow (m³/h)</label>
+                        <input type="number" class="form-control" id="vflowinput" aria-describedby="vflowhelp"
+                               placeholder="1">
+                        <small id="vflowhelp" class="form-text text-muted">Pump throughput in cubic meters per
+                            hour.</small>
+                    </div>
+                </form>
+
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="vflowlabel">Volume flow (m³/h)</label>
-                <input type="number" class="form-control" id="vflowinput" aria-describedby="vflowhelp" placeholder="1">
-                <small id="vflowhelp" class="form-text text-muted">Pump throughput in cubic meters per hour.</small>
+    </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <h2>System definition</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {% include 'pipingtable.html' %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {% include 'fittingstable.html' %}
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <h2>System definition</h2>
-            {% include 'pipingtable.html' %}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            {% include 'fittingstable.html' %}
-        </div>
-    </div>
+
 
 {% endblock %}
 {% block scripts %}
     <script src="./static/scripts/addrmtablerow.js"></script>
+    <script src="./static/scripts/syncID.js"></script>
+    <script src="./static/scripts/checkboxEventFuncs.js"></script>
 {% endblock %}

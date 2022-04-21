@@ -46,3 +46,9 @@ def about():
 def getstdtablerow():
     """Returns a new standard row."""
     return render_template("stdfittingstablerow.html")
+
+
+@app.route('/generatereport')
+def generatereport():
+    """Generates some sort of report."""
+    return 0

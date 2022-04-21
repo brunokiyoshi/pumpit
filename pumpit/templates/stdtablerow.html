@@ -1,15 +1,39 @@
-<tr>
-    <td class="pt-3-half" contenteditable="true">PIPE-01</td>
-    <td class="pt-3-half" contenteditable="true">Pump discharge</td>
-    <td class="pt-3-half" contenteditable="true">
+<tr class="tr-editable">
+    <td class="pt-3-half" contenteditable="false">
+        <input type="text" class="pipe-tag-input" form="system-form" value="PIPE01" >
+    </td>
+    <td class="pt-3-half" contenteditable="false">
+        <input type="text" class="pipe-description-input" form="system-form" value="Pump discharge">
+    </td>
+    <td class="pt-3-half pipe-type-td select-or-text-td" contenteditable="false">
+        <input type="text" class="pipe-custom-type-text type-text" form="system-form" style="display: none;" placeholder="Pipe type">
         {% include 'pipeoptions.html' %}
+        ID=<input class="pipe-ID-input" type="number" value="0.307" form="system-form" disabled>mm
+        <label><input type="checkbox" form="system-form" class="pipe-custom-type-input" onchange="switchtextselect(this)">Custom</label>
+
     </td>
-    <td class="pt-3-half" contenteditable="true">
+{#    <td class="pt-3-half pipe-ID-td" contenteditable="false">#}
+{#        <input class="pipe-ID-input" type="number" value="0.307" form="system-form" disabled>#}
+{#    </td>#}
+    <td class="pt-3-half" contenteditable="false">
+        <input type="text" class="pipe-custom-material-text" form="system-form" style="display: none" placeholder="Material name">
         {% include 'pipematerialoptions.html' %}
+        ε=<input type="number" class="pipe-roughness-input" value="0.0000457" form="system-form" disabled>mm
+        <label><input type="checkbox" form="system-form" class="pipe-custom-material-input" onchange="switchtextselect(this)">Custom</label>
     </td>
-    <td class="pt-3-half" contenteditable="true">6</td>
-    <td class="pt-3-half" contenteditable="true">-</td>
-    <td class="pt-3-half" contenteditable="true">1</td>
+{#    <td class="pt-3-half pipe-roughness-td">#}
+{#        <input type="number" class="pipe-roughness-input" value="0.0000457" form="system-form" disabled>#}
+{#    </td>#}
+    <td class="pt-3-half" contenteditable="false">
+        <input type="number" class="pipe-length-input" form="system-form" value="5">
+    </td>
+    <td class="pt-3-half" contenteditable="false">
+        <input type="number" class="pipe-deltaz-input" form="system-form" value="5">
+    </td>
+    <td class="pt-3-half" contenteditable="false">
+        <input type="number" class="pipe-deltap-input" form="system-form" value="0" disabled>
+        <label><input type="checkbox" form="system-form" class="pipe-set-deltap-input">Set</label>
+    </td>
 
     <td class="pt-3-half">
         <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up" aria-hidden="true"></i></a></span>
@@ -17,7 +41,7 @@
     </td>
     <td>
         <span class="table-remove">
-            <button type="button" class="btn btn-danger btn-rounded btn-sm my-0 waves-effect waves-light">
+            <button type="button" class="btn btn-danger btn-rounded btn-sm my-0 waves-effect waves-light btn-rm">
                 Remove
             </button>
         </span>

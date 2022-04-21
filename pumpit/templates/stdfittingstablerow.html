@@ -1,17 +1,33 @@
-<tr>
-    <td class="pt-3-half" contenteditable="true">VALVE-01</td>
-    <td class="pt-3-half" contenteditable="true"Control valve>Pump discharge</td>
-    <td class="pt-3-half" contenteditable="true">
-        {% include 'fittingoptions.html' %}
+<tr class="tr-editable">
+    <td class="pt-3-half" contenteditable="false">
+        <input type="text" class="fitting-tag-input" form="system-form" value="VALVE01">
     </td>
-    <td class="pt-3-half" contenteditable="true">-</td>
+    <td class="pt-3-half" contenteditable="false">
+        <input type="text" class="fitting-description-input" value="Flow control valve" form="system-form">
+    </td>
+    <td class="pt-3-half" contenteditable="false">
+        {% include 'fittingoptions.html' %}
+        <input type="text" class="fitting-custom-type-text" form="system-form" style="display: none" placeholder="Fitting type">
+        K=<input type="number" class="fitting-k-input" form="system-form" value="0">
+        <label><input type="checkbox" form="system-form" class="fitting-custom-type-checkbox" onchange="switchtextselect(this)">Custom</label>
+
+    </td>
+    {#    <td class="pt-3-half" contenteditable="false">#}
+    {#        <input type="number" class="fitting-k-input" form="system-form" value="0">#}
+    {#    </td>#}
+    <td class="pt-3-half" contenteditable="false">
+        <input type="number" class="fitting-deltap-input" form="system-form" value="0" disabled>
+        <label><input type="checkbox" form="system-form" class="fitting-set-deltap-input">Set</label>
+    </td>
     <td class="pt-3-half">
-        <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up" aria-hidden="true"></i></a></span>
-        <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down" aria-hidden="true"></i></a></span>
+        <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                                                                   aria-hidden="true"></i></a></span>
+        <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                                                                     aria-hidden="true"></i></a></span>
     </td>
     <td>
         <span class="table-remove">
-            <button type="button" class="btn btn-danger btn-rounded btn-sm my-0 waves-effect waves-light">
+            <button type="button" class="btn btn-danger btn-rounded btn-sm my-0 waves-effect waves-light btn-rm">
                 Remove
             </button>
         </span>

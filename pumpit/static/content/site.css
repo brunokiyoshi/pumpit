@@ -44,4 +44,12 @@ input[type="checkbox"].input-validation-error {
 .table-editable {
     overflow-x: auto;
     white-space: nowrap;
+    font-size: .6em;
+}
+.btn-rm{
+    font-size: .6em;
+}
+
+h2{
+    text-align: center;
 }
