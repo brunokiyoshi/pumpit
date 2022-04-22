@@ -17,14 +17,17 @@ for (let i = 0; i < tableIDs.length; i++) {
                 return response.text();
             }).then(function (data) {
                 $("#fittingstable").find('tbody').append(data);
+                //Add calcAll function to newly created inputs
+                const $newinputs = $("#fittingstable").find(".fitting-prop");
+                for (var i = 0; $newinputs.lenght;i++){
+                    $newinputs[i].addEventListener("change", calculateAll);
+                }
             }).catch(function () {
                 console.log("Couldn't fetch std table row");
             });
         }
-
-
-
         $tableID.find('table').append($clone);
+        calculateAll();
     });
 
     $tableID.on('click', '.table-remove', function () {
@@ -38,7 +41,7 @@ for (let i = 0; i < tableIDs.length; i++) {
         } else {
             $(this).parents('tr').detach();
         }
-
+        calculateAll();
     });
 
     $tableID.on('click', '.table-up', function () {

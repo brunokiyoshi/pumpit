@@ -1,7 +1,7 @@
 """
 Routes and views for the flask application.
 """
-
+import os
 from datetime import datetime
 from flask import render_template, send_from_directory, Markup
 from pumpit import app
@@ -11,7 +11,7 @@ from pumpit import app
 @app.route('/home')
 def home():
     """Renders the home page."""
-    systemsvg = open('pumpit\\static\\svg\\system.svg').read()
+    systemsvg = open(os.path.join('pumpit', 'static', 'svg', 'system.svg')).read()
     return render_template(
         'index.html',
         title='Home Page',

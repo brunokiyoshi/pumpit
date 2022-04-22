@@ -1,22 +1,19 @@
 <tr class="tr-editable">
     <td class="pt-3-half" contenteditable="false">
-        <input type="text" class="fitting-tag-input" form="system-form" value="VALVE01">
+        <input type="text" class="fitting-tag-input fitting-prop" form="system-form" value="VALVE01">
     </td>
     <td class="pt-3-half" contenteditable="false">
-        <input type="text" class="fitting-description-input" value="Flow control valve" form="system-form">
+        <input type="text" class="fitting-description-input fitting-prop" value="Flow control valve" form="system-form">
     </td>
     <td class="pt-3-half" contenteditable="false">
         {% include 'fittingoptions.html' %}
-        <input type="text" class="fitting-custom-type-text" form="system-form" style="display: none" placeholder="Fitting type">
-        K=<input type="number" class="fitting-k-input" form="system-form" value="0">
-        <label><input type="checkbox" form="system-form" class="fitting-custom-type-checkbox" onchange="switchtextselect(this)">Custom</label>
+        <input type="text" class="fitting-custom-type-text fitting-prop" form="system-form" style="display: none" placeholder="Fitting type">
+        K=<input type="number" class="fitting-k-input fitting-prop" form="system-form" value="0">
+        <label><input type="checkbox" form="system-form fitting-prop" class="fitting-custom-type-checkbox" onchange="switchtextselect(this)">Custom</label>
 
     </td>
-    {#    <td class="pt-3-half" contenteditable="false">#}
-    {#        <input type="number" class="fitting-k-input" form="system-form" value="0">#}
-    {#    </td>#}
     <td class="pt-3-half" contenteditable="false">
-        <input type="number" class="fitting-deltap-input" form="system-form" value="0" disabled>
+        <input type="number" class="fitting-deltap-input fitting-prop" form="system-form" value="0" disabled>
         <label><input type="checkbox" form="system-form" class="fitting-set-deltap-input">Set</label>
     </td>
     <td class="pt-3-half">
