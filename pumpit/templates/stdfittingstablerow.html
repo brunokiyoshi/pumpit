@@ -1,19 +1,30 @@
 <tr class="tr-editable">
+
     <td class="pt-3-half" contenteditable="false">
         <input type="text" class="fitting-tag-input fitting-prop" form="system-form" value="VALVE01">
     </td>
     <td class="pt-3-half" contenteditable="false">
         <input type="text" class="fitting-description-input fitting-prop" value="Flow control valve" form="system-form">
     </td>
-    <td class="pt-3-half" contenteditable="false">
-        {% include 'fittingoptions.html' %}
-        <input type="text" class="fitting-custom-type-text fitting-prop" form="system-form" style="display: none" placeholder="Fitting type">
-        K=<input type="number" class="fitting-k-input fitting-prop" form="system-form" value="0">
-        <label><input type="checkbox" form="system-form fitting-prop" class="fitting-custom-type-checkbox" onchange="switchtextselect(this)">Custom</label>
+    <td class="pt-3-half td-fitting-selection " contenteditable="false">
+
+        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                data-bs-target="#fittingSelectionModal">
+            Choose fitting
+        </button>
+
+        {% include "modalfittingselection.html" %}
+        <input type="text" class="fitting-custom-type-text fitting-prop" form="system-form"
+               placeholder="Fitting type" disabled>
+        K=<input type="number" class="fitting-k-input fitting-prop" form="system-form" value="40"
+                 onchange="calcDeltaPfitting(this)" disabled>
+        <label class="text-center"><input type="checkbox" form="system-form" class="fitting-custom-type-checkbox fitting-prop"
+                      onchange="switchtextselect(this)">Custom</label>
 
     </td>
+
     <td class="pt-3-half" contenteditable="false">
-        <input type="number" class="fitting-deltap-input fitting-prop" form="system-form" value="0" disabled>
+        <input type="number" class="fitting-deltap-input fitting-prop" form="system-form" value="3.7310" disabled>mwg
         <label><input type="checkbox" form="system-form" class="fitting-set-deltap-input">Set</label>
     </td>
     <td class="pt-3-half">
@@ -29,4 +40,5 @@
             </button>
         </span>
     </td>
+
 </tr>

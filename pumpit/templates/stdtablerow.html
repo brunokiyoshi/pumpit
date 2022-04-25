@@ -8,27 +8,26 @@
     <td class="pt-3-half pipe-type-td select-or-text-td" contenteditable="false">
         <input type="text" class="pipe-custom-type-text type-text" form="system-form" style="display: none;" placeholder="Pipe type">
         {% include 'pipeoptions.html' %}
-        ID=<input class="pipe-ID-input" type="number" value="0.307" form="system-form" disabled>mm
-        <label><input type="checkbox" form="system-form" class="pipe-custom-type-input" onchange="switchtextselect(this)">Custom</label>
+        ID=<input class="pipe-ID-input" type="number" value="102.2604" form="system-form" disabled>mm
+        <input type="checkbox" form="system-form" class="pipe-custom-type-input" onchange="switchtextselect(this);resetID($(this)) ">
+        <label>Custom</label>
 
     </td>
-{#    <td class="pt-3-half pipe-ID-td" contenteditable="false">#}
-{#        <input class="pipe-ID-input" type="number" value="0.307" form="system-form" disabled>#}
-{#    </td>#}
     <td class="pt-3-half" contenteditable="false">
         <input type="text" class="pipe-custom-material-text" form="system-form" style="display: none" placeholder="Material name">
         {% include 'pipematerialoptions.html' %}
-        ε=<input type="number" class="pipe-roughness-input" value="0.0000457" form="system-form" disabled>mm
-        <label><input type="checkbox" form="system-form" class="pipe-custom-material-input" onchange="switchtextselect(this)">Custom</label>
+        ε=<input type="number" class="pipe-roughness-input" value="0.0457" form="system-form" disabled>mm
+        <input type="checkbox" form="system-form" class="pipe-custom-material-input" onchange="switchtextselect(this);resetRough($(this))">
+        <label>Custom</label>
     </td>
-{#    <td class="pt-3-half pipe-roughness-td">#}
-{#        <input type="number" class="pipe-roughness-input" value="0.0000457" form="system-form" disabled>#}
-{#    </td>#}
     <td class="pt-3-half" contenteditable="false">
         <input type="number" class="pipe-length-input" form="system-form" value="5">
     </td>
     <td class="pt-3-half" contenteditable="false">
         <input type="number" class="pipe-deltaz-input" form="system-form" value="5">
+    </td>
+    <td class="pt-3-half" contenteditable="false">
+        <input type="number" class="pipe-velocity-input" form="system-form" value="1.3528" disabled>m/s
     </td>
     <td class="pt-3-half" contenteditable="false">
         <input type="number" class="pipe-deltap-input" form="system-form" value="0" disabled>

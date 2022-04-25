@@ -1,0 +1,1966 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>Pressure Loss from Fittings - 3K Method | Neutrium</title>
+    <meta name=description
+          content="Fittings such as elbows, tees, valves and reducers represent a significant component of the pressure loss in most pipe systems. This article details the calculation of pressure losses through pipe fittings and some minor equipment using the 3K method.">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <link rel=icon sizes="16x16 32x32 48x48 64x64 152x152 180x180" href=https://neutrium.net/favicon.ico type=image/png>
+    <link rel=apple-touch-icon sizes=180x180 href=https://neutrium.net/icons/favicon180.png>
+    <link rel=apple-touch-icon sizes=152x152 href=https://neutrium.net/icons/favicon152.png>
+    <link rel=mask-icon href=https://neutrium.net/favicon.svg color=black>
+    <meta name=msapplication-TileColor content="#EAEAEA">
+    <meta name=msapplication-TileImage content="https://neutrium.net/icons/favicon144.png">
+    <meta name=application-name content="Neutrium">
+    <meta name=msapplication-tooltip content="Tooltip">
+    <meta name=msapplication-config content="https://neutrium.net/icons/ieconfig.xml">
+    <style>@font-face {
+        font-family: socialfoundicons;
+        src: url(/icons/social_foundicons.eot);
+        src: url(/icons/social_foundicons.eot?#iefix) format("embedded-opentype"), url(/icons/social_foundicons.woff) format("woff"), url(/icons/social_foundicons.ttf) format("truetype"), url(/icons/social_foundicons.svg#SocialFoundicons) format("svg");
+        font-weight: 400;
+        font-style: normal
+    }
+
+    [class*=foundicon-] {
+        background-image: none;
+        background-position: 0 0;
+        background-repeat: repeat;
+        display: inline;
+        width: auto;
+        height: auto;
+        line-height: inherit;
+        vertical-align: middle
+    }
+
+    [class*=foundicon-]:before {
+        font-family: socialfoundicons;
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: inherit
+    }
+
+    .share-icons-ul {
+        font-size: 24px;
+        line-height: 24px;
+        list-style: none;
+        margin: 30px 0 -20px
+    }
+
+    .share-icons-ul li {
+        display: inline;
+        text-align: middle
+    }
+
+    .share-icons-ul li a {
+        display: inline-block;
+        margin: 0;
+        padding: 8px
+    }
+
+    .foundicon-thumb-up:before {
+        content: "\f000"
+    }
+
+    .foundicon-thumb-down:before {
+        content: "\f001"
+    }
+
+    .foundicon-rss:before {
+        content: "\f002"
+    }
+
+    .foundicon-facebook:before {
+        content: "\f003"
+    }
+
+    .foundicon-twitter:before {
+        content: "\f004"
+    }
+
+    .foundicon-pinterest:before {
+        content: "\f005"
+    }
+
+    .foundicon-github:before {
+        content: "\f006"
+    }
+
+    .foundicon-path:before {
+        content: "\f007"
+    }
+
+    .foundicon-linkedin:before {
+        content: "\f008"
+    }
+
+    .foundicon-dribbble:before {
+        content: "\f009"
+    }
+
+    .foundicon-stumble-upon:before {
+        content: "\f00a"
+    }
+
+    .foundicon-behance:before {
+        content: "\f00b"
+    }
+
+    .foundicon-reddit:before {
+        content: "\f00c"
+    }
+
+    .foundicon-google-plus:before {
+        content: "\f00d"
+    }
+
+    .foundicon-youtube:before {
+        content: "\f00e"
+    }
+
+    .foundicon-vimeo:before {
+        content: "\f00f"
+    }
+
+    .foundicon-flickr:before {
+        content: "\f010"
+    }
+
+    .foundicon-slideshare:before {
+        content: "\f011"
+    }
+
+    .foundicon-picassa:before {
+        content: "\f012"
+    }
+
+    .foundicon-skype:before {
+        content: "\f013"
+    }
+
+    .foundicon-steam:before {
+        content: "\f014"
+    }
+
+    .foundicon-instagram:before {
+        content: "\f015"
+    }
+
+    .foundicon-foursquare:before {
+        content: "\f016"
+    }
+
+    .foundicon-delicious:before {
+        content: "\f017"
+    }
+
+    .foundicon-chat:before {
+        content: "\f018"
+    }
+
+    .foundicon-torso:before {
+        content: "\f019"
+    }
+
+    .foundicon-tumblr:before {
+        content: "\f01a"
+    }
+
+    .foundicon-video-chat:before {
+        content: "\f01b"
+    }
+
+    .foundicon-digg:before {
+        content: "\f01c"
+    }
+
+    .foundicon-wordpress:before {
+        content: "\f01d"
+    }</style>
+    <style>@font-face {
+        font-family: ndglyphs;
+        src: url(/icons/ndglyphs_1-2.eot);
+        src: url(/icons/ndglyphs_1-2.eot?#iefix) format("embedded-opentype"), url(/icons/ndglyphs_1-2.svg#ndglyphsregular) format("svg"), url(/icons/ndglyphs_1-2.woff) format("woff"), url(/icons/ndglyphs_1-2.ttf) format("truetype");
+        font-style: normal;
+        font-weight: 400;
+        font-display: block
+    }
+
+    @font-face {
+        font-family: lorimer;
+        src: url(/fonts/Lorimer_No2_Cnd_Semibold-webfont.eot);
+        src: url(/fonts/Lorimer_No2_Cnd_Semibold-webfont.eot?#iefix) format("embedded-opentype"), url(/fonts/Lorimer_No2_Cnd_Semibold-webfont.woff) format("woff"), url(/fonts/Lorimer_No2_Cnd_Semibold-webfont.ttf) format("truetype"), url(/fonts/Lorimer_No2_Cnd_Semibold-webfont.svg#LorimerNo2CondensedSemiboldRg) format("svg");
+        font-weight: 400;
+        font-style: normal
+    }
+
+    @font-face {
+        font-family: charissil;
+        src: url(/fonts/charissilr-webfont.eot);
+        src: url(/fonts/charissilr-webfont.eot?#iefix) format("embedded-opentype"), url(/fonts/charissilr-webfont.woff) format("woff"), url(/fonts/charissilr-webfont.ttf) format("truetype"), url(/fonts/charissilr-webfont.svg#charis_silregular) format("svg");
+        font-weight: 400;
+        font-style: normal
+    }
+
+    @font-face {
+        font-family: charissil;
+        src: url(/fonts/charissili-webfont.eot);
+        src: url(/fonts/charissili-webfont.eot?#iefix) format("embedded-opentype"), url(/fonts/charissili-webfont.woff) format("woff"), url(/fonts/charissili-webfont.ttf) format("truetype"), url(/fonts/charissili-webfont.svg#charis_silregular) format("svg");
+        font-weight: 400;
+        font-style: oblique
+    }
+
+    @font-face {
+        font-family: charissil;
+        src: url(/fonts/charissili-webfont.eot);
+        src: url(/fonts/charissili-webfont.eot?#iefix) format("embedded-opentype"), url(/fonts/charissili-webfont.woff) format("woff"), url(/fonts/charissili-webfont.ttf) format("truetype"), url(/fonts/charissili-webfont.svg#charis_silregular) format("svg");
+        font-weight: 400;
+        font-style: italic
+    }
+
+    @font-face {
+        font-family: charissil;
+        src: url(/fonts/charissilb-webfont.eot);
+        src: url(/fonts/charissilb-webfont.eot?#iefix) format("embedded-opentype"), url(/fonts/charissilb-webfont.woff) format("woff"), url(/fonts/charissilb-webfont.ttf) format("truetype"), url(/fonts/charissilb-webfont.svg#charis_silregular) format("svg");
+        font-weight: 700;
+        font-style: normal
+    }
+
+    html, body {
+        color: #666;
+        counter-reset: section;
+        font-family: charissil, serif;
+        font-size: 20px;
+        height: 100%;
+        line-height: 180%;
+        margin: 0;
+        overflow: visible;
+        padding: 0;
+        width: 100%
+    }
+
+    @media (max-width: 480px) {
+        html, body {
+            font-size: 18px
+        }
+    }
+
+    .font-normal {
+        color: #666;
+        font-family: charissil, serif;
+        font-size: 20px;
+        line-height: 180%
+    }
+
+    .center, .centered {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center
+    }
+
+    .right {
+        float: right
+    }
+
+    .left {
+        float: left
+    }
+
+    .text-left {
+        text-align: left
+    }
+
+    .text-right {
+        text-align: right
+    }
+
+    .clear {
+        clear: both
+    }
+
+    .clearfix {
+        *zoom: 1
+    }
+
+    .clearfix::before, .clearfix::after {
+        display: table;
+        content: "";
+        line-height: 0
+    }
+
+    .clearfix::after {
+        clear: both
+    }
+
+    .upper {
+        text-transform: uppercase
+    }
+
+    hr {
+        border-style: none;
+        border-top: 1px solid #c2c2c2;
+        border-top-style: solid;
+        clear: both;
+        height: 1px;
+        margin: 30px 0
+    }
+
+    hr.light {
+        border-top: 1px solid #e8e8e8;
+        clear: both;
+        margin: 30px 0
+    }
+
+    .line-dark {
+        border-top: 1px solid #c2c2c2;
+        clear: both;
+        height: 1px;
+        margin: 30px 0
+    }
+
+    .line-light {
+        border-top: 1px solid #e8e8e8;
+        clear: both;
+        height: 1px;
+        margin: 30px 0
+    }
+
+    a {
+        color: #496fb3;
+        display: inline;
+        font-weight: 500;
+        margin-left: -4px;
+        padding: 4px;
+        text-decoration: underline
+    }
+
+    a:hover {
+        background-color: #e7e7e7;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px
+    }
+
+    a.h1div, a.share-link, a.top, .tagBubble a, .relatedPost a, #footer a {
+        text-decoration: none
+    }
+
+    a.img-link {
+        border: 2px solid transparent;
+        display: block;
+        margin: 0
+    }
+
+    a.img-link:hover {
+        background-color: transparent;
+        border: 2px solid #e7e7e7;
+        display: block
+    }
+
+    a.noHover:hover {
+        background-color: transparent;
+        text-decoration: none
+    }
+
+    a.crumb {
+        color: #496fb3;
+        font-weight: 500;
+        text-decoration: none
+    }
+
+    .image-container {
+        margin: 10px auto;
+        max-width: 100%;
+        position: relative
+    }
+
+    .image-container img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        width: 100%
+    }
+
+    .image-container.constrained {
+        max-width: 770px
+    }
+
+    table {
+        text-align: left;
+        position: relative;
+        border-collapse: collapse
+    }
+
+    table caption {
+        background-color: #fff
+    }
+
+    img {
+        border: none
+    }
+
+    .neutrium-title {
+        color: #496fb3;
+        display: block;
+        font-family: lorimer, arial, helvetica, san-serif;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1em;
+        margin: 0 0 32px;
+        padding: 0;
+        text-transform: uppercase
+    }
+
+    .h1div {
+        clear: left;
+        color: #496fb3;
+        display: inline-block;
+        font-family: lorimer, arial, helvetica, san-serif;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1em;
+        margin: -4px 0 0 -4px;
+        padding: 4px;
+        text-transform: uppercase
+    }
+
+    h1 {
+        color: #496fb3;
+        counter-reset: subsection;
+        font-family: lorimer, arial, helvetica, san-serif;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1em;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase
+    }
+
+    h2 {
+        font-family: lorimer, arial, helvetica, san-serif;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1em;
+        margin: 30px 0 20px;
+        padding: 0
+    }
+
+    h3 {
+        font-family: lorimer, arial, helvetica, san-serif;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 1em;
+        margin: 5px 0;
+        padding: 0
+    }
+
+    .article-body h1 {
+        border-top: 1px solid #c2c2c2;
+        margin-top: 20px;
+        padding-top: 30px
+    }
+
+    .article-body .ad-container {
+        text-align: center
+    }
+
+    .article-body .ad-container + h1 {
+        border-top: none;
+        padding-top: 0
+    }
+
+    .article-body h1::before {
+        counter-increment: section;
+        content: counter(section) ". "
+    }
+
+    .article-body h1.no-number::before {
+        counter-increment: none;
+        content: none
+    }
+
+    .article-body h2::before {
+        counter-increment: subsection;
+        content: counter(section) "." counter(subsection) " "
+    }
+
+    .article-body h2.no-number::before {
+        counter-increment: none;
+        content: none
+    }
+
+    .article-body h3::before {
+        counter-increment: thirdsection;
+        content: counter(section) "." counter(subsection) "." counter(thirdsection) " "
+    }
+
+    .article-body h3.no-number::before {
+        counter-increment: none;
+        content: none
+    }
+
+    p {
+        text-align: justify;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    p.indent {
+        margin-left: 40px
+    }
+
+    p.small-font, span.small-font {
+        font-size: 16px
+    }
+
+    ul {
+        padding-left: 30px
+    }
+
+    ul li {
+        list-style-type: disc;
+        list-style-position: inside;
+        margin: 10px 0
+    }
+
+    ol, ul {
+        padding-left: 40px
+    }
+
+    ol li, ul li {
+        list-style-position: outside;
+        margin: 10px 0
+    }
+
+    blockquote {
+        font-style: italic;
+        padding-left: 40px;
+        padding-right: 40px
+    }
+
+    .field {
+        border: 1px solid #d0d0d0;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        font-family: arial, helvetica, san-serif;
+        font-size: 14px;
+        min-height: 28px;
+        padding-left: 10px
+    }
+
+    button, .button {
+        background-color: #f8f8f8;
+        border: 1px solid #d0d0d0;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        color: #666;
+        display: inline-block;
+        font-family: charissil, serif;
+        font-size: 20px;
+        line-height: 180%;
+        margin-top: 5px;
+        padding: 4px 8px;
+        -webkit-appearance: none
+    }
+
+    button:hover, .button:hover {
+        background-color: #e7e7e7;
+        color: #666
+    }
+
+    button.positive, .button.positive {
+        background-color: #496fb3;
+        color: #fff
+    }
+
+    button.positive:hover, .button.positive:hover {
+        background-color: #3a598f
+    }
+
+    #main {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        min-height: 100%;
+        margin: 0 auto -96px;
+        padding-bottom: 68px;
+        overflow-x: visible;
+        width: 100%
+    }
+
+    #maincol {
+        min-height: 500px;
+        margin: 0 auto;
+        overflow: visible;
+        padding: 30px 10px 20px;
+        width: auto
+    }
+
+    #maincol > p, #maincol .article-body > p, #maincol em, #maincol h1, #maincol h2, #maincol h3, #maincol ul, #maincol ol, #maincol hr, #maincol blockquote, #maincol .article-body > table, #maincol .focusBox, #maincol .excerpt-container, #maincol .neutrium-title, #maincol .h1div, #maincol .definitions, #maincol .date-share-container, #maincol .articleTags, #maincol .mail-form, #maincol .mail-submit, #maincol .contact-form {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 770px
+    }
+
+    #maincol .h1div {
+        display: block;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%
+    }
+
+    #maincol > img, #maincol > .article-body > img, #maincol > .article-body .image-container img, #maincol a img, #maincol p img {
+        border: 2px solid transparent;
+        display: block;
+        margin: 10px auto;
+        overflow: hidden
+    }
+
+    .focusBox {
+        background-color: #f5f5f5;
+        border: 1px solid #c2c2c2;
+        box-sizing: border-box;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        margin-bottom: 30px;
+        padding: 20px
+    }
+
+    .focusBox p {
+        margin-bottom: 0;
+        font-size: 18px
+    }
+
+    .top {
+        color: #496fb3
+    }
+
+    .maincol-width {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 770px
+    }
+
+    .article-body > table {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        min-width: 770px
+    }
+
+    @media (max-width: 770px) {
+        .article-body > table {
+            min-width: 100%
+        }
+    }
+
+    .summaryImg {
+        width: 100%
+    }
+
+    .summaryImg-link {
+        border: 2px solid transparent;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        display: block;
+        float: right;
+        margin-top: 14px;
+        margin-left: 30px;
+        margin-right: 10px;
+        max-width: 30%
+    }
+
+    @media (max-width: 600px) {
+        .summaryImg-link {
+            margin-left: 10px;
+            max-width: 100%;
+            padding: 0 10%
+        }
+    }
+
+    .summaryImg-link:hover {
+        background-color: transparent;
+        border: 2px solid #e7e7e7;
+        display: block
+    }
+
+    .image-container {
+        margin: 0 auto
+    }
+
+    .definitions {
+        display: block;
+        margin: 1em 0 30px
+    }
+
+    .definitions tbody {
+        vertical-align: baseline
+    }
+
+    .date-share-container {
+        margin-top: 40px;
+        vertical-align: middle
+    }
+
+    .date-share-container > span {
+        vertical-align: middle
+    }
+
+    .share-link:hover {
+        color: #496fb3
+    }
+
+    .article-date {
+        display: block;
+        float: left;
+        line-height: 55px
+    }
+
+    .share-icons-ul {
+        display: block;
+        float: right;
+        font-size: 34px !important;
+        line-height: 34px !important;
+        margin-top: 0;
+        text-align: right
+    }
+
+    .share-icons-ul a {
+        padding-top: 10px !important;
+        padding-bottom: 6px !important
+    }
+
+    .articleTags {
+        margin-top: 15px
+    }
+
+    .tagBubble {
+        background-color: #f8f8f8;
+        border: 1px solid #d0d0d0;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        display: inline-block;
+        margin: 2px 4px 2px 0;
+        padding: 2px 4px
+    }
+
+    .tagBubble a {
+        color: #666
+    }
+
+    .tagBubble:hover {
+        background-color: #e7e7e7
+    }
+
+    .contact {
+        clear: both;
+        height: 50px;
+        margin: 0;
+        margin-top: 50px;
+        padding: 0
+    }
+
+    .contact-icon {
+        height: 50px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        position: relative;
+        width: 50px
+    }
+
+    .contact-icon-bg {
+        color: #496fb3;
+        float: left;
+        font-family: ndglyphs;
+        font-size: 50px;
+        line-height: 50px;
+        position: absolute;
+        text-align: center;
+        vertical-align: middle;
+        width: 50px
+    }
+
+    .contact-icon-fg {
+        color: #fff;
+        float: left;
+        font-family: ndglyphs;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 50px;
+        position: absolute;
+        text-align: center;
+        vertical-align: middle;
+        width: 50px
+    }
+
+    .contact .type {
+        font-family: lorimer, arial, helvetica, san-serif;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 50px;
+        padding: 0 0 5px 0;
+        vertical-align: middle
+    }
+
+    .center-line {
+        border-left: 1px solid #eaeaea;
+        float: right;
+        height: 333px;
+        margin-right: 40px;
+        margin-top: 90px;
+        width: 1px
+    }
+
+    .top-nav {
+        margin-bottom: 7px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        max-width: 770px;
+        text-align: right
+    }
+
+    .top-nav a {
+        text-decoration: none
+    }
+
+    @media (max-width: 425px) {
+        .top-nav {
+            margin-right: 0
+        }
+    }
+
+    .top-nav-button {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        display: inline-block;
+        font-family: lorimer, arial, helvetica, san-serif;
+        font-size: 26px;
+        line-height: 38px;
+        height: 36px;
+        margin-right: 10px;
+        margin-top: 0;
+        padding-top: 0
+    }
+
+    .top-nav-button:hover {
+        background-color: #fff
+    }
+
+    @media (max-width: 425px) {
+        .top-nav-button {
+            font-size: 20.8px;
+            margin-right: 3.33333333px
+        }
+    }
+
+    .top-nav-text {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        color: #496fb3;
+        font-weight: 500;
+        min-width: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        vertical-align: middle
+    }
+
+    .responsive-ad {
+        width: 320px;
+        height: 50px
+    }
+
+    @media (min-width: 500px) {
+        .responsive-ad {
+            width: 468px;
+            height: 60px
+        }
+    }
+
+    @media (min-width: 800px) {
+        .responsive-ad {
+            width: 728px;
+            height: 90px
+        }
+    }
+
+    #footer-outer {
+        background-color: #eaeaea;
+        font-size: 16px;
+        min-height: 56px;
+        margin-top: 40px;
+        width: 100%
+    }
+
+    #footer-inner {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        line-height: 28px;
+        margin: 0 auto;
+        max-width: 770px;
+        padding: 14px 10px;
+        text-align: center;
+        width: 100%
+    }
+
+    #header-container {
+        background-color: #eaeaea;
+        height: 160px;
+        width: 100%;
+        position: absolute;
+        z-index: -1
+    }
+
+    #mainheader {
+        display: block;
+        font-family: lorimer, arial, helvetica, san-serif;
+        float: left;
+        height: 75px;
+        margin: 20px 0 20px 15px;
+        text-align: middle
+    }
+
+    #header-width {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 770px
+    }
+
+    #mainheader > span {
+        color: #496fb3;
+        display: inline;
+        font-size: 60px;
+        line-height: 75px;
+        vertical-align: middle
+    }
+
+    .main-icon {
+        display: inline-block;
+        height: 75px;
+        font-size: 75px;
+        line-height: 75px;
+        padding-right: 5px;
+        width: 75px;
+        vertical-align: middle
+    }
+
+    .main-icon-bg {
+        color: #496fb3;
+        font-family: ndglyphs;
+        font-size: 75px;
+        position: absolute;
+        text-align: center;
+        top: 20;
+        width: 75px
+    }
+
+    .main-icon-fg {
+        color: #fff;
+        font-family: ndglyphs;
+        font-size: 36px;
+        font-weight: 400;
+        position: absolute;
+        text-align: center;
+        top: 20;
+        width: 75px
+    }
+
+    .pagination {
+        padding: 0;
+        margin: 0;
+        text-align: center
+    }
+
+    .pagination li {
+        display: inline-block;
+        line-height: 50px;
+        list-style: none;
+        width: 50px
+    }
+
+    .pagination a {
+        background: 0 0;
+        border: none;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        display: inline-block;
+        height: 50px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        width: 50px
+    }
+
+    .pagination a:hover, .pagination a:active {
+        background: #e7e7e7;
+        border-radius: 50%
+    }
+
+    .pagination a.prev, .pagination a.next {
+        font-family: helvetica, arial, sans serif
+    }
+
+    .pagination .title {
+        margin-right: 4px
+    }
+
+    .pagination .gap {
+        margin-right: 4px
+    }
+
+    .pagination .active {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        color: #496fb3;
+        font-size: 1.4em;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+        width: 50px
+    }
+
+    .pagination .arrow {
+        font-size: 1.4em
+    }
+
+    .articleTableContainerFrame, .articleTableContainerScrollFrame {
+        margin: 30px auto;
+        max-width: 100%
+    }
+
+    .articleTableContainerFrame table, .articleTableContainerScrollFrame table {
+        background-color: #fff;
+        border-collapse: collapse;
+        margin: 0 auto
+    }
+
+    .articleTableContainerFrame th, .articleTableContainerScrollFrame th {
+        border: 1px solid #ccc;
+        background-color: #e7e7e7;
+        font-weight: 700;
+        margin: 0;
+        padding: 5px
+    }
+
+    .articleTableContainerFrame td, .articleTableContainerScrollFrame td {
+        border: 1px solid #ccc;
+        margin: 0;
+        padding: 5px
+    }
+
+    .articleTableContainerFrame.popout, .articleTableContainerScrollFrame.popout {
+        cursor: zoom-out
+    }
+
+    .articleTableContainerFrame.popout.constrain, .articleTableContainerScrollFrame.popout.constrain {
+        cursor: zoom-in
+    }
+
+    .articleTableContainerFrame.constrained, .articleTableContainerScrollFrame.constrained {
+        max-width: 770px
+    }
+
+    @media (max-width: 770px) {
+        .articleTableContainerFrame.constrained, .articleTableContainerScrollFrame.constrained {
+            max-width: 100%
+        }
+    }
+
+    .articleTableContainerScrollFrame {
+        position: relative;
+        width: 100vw
+    }
+
+    .articleTableContainerFrame {
+        overflow-x: scroll
+    }
+
+    .articleTableHeader {
+        background-color: #fff;
+        overflow-x: scroll;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        z-index: 2;
+        -ms-overflow-style: none
+    }
+
+    .articleTableHeader::-webkit-scrollbar {
+        display: none
+    }
+
+    .articleTableScroller {
+        overflow-x: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none
+    }
+
+    .articleTableScroller::-webkit-scrollbar {
+        display: none
+    }
+
+    .articleTableFixed table {
+        table-layout: fixed
+    }
+
+    .tableTopHide thead {
+        display: none
+    }
+
+    .tableTopHide caption {
+        display: none
+    }
+
+    #maincol .articleTableContainerFrame .ql-center-displayed-equation img, #maincol .articleTableContainerScrollFrame .ql-center-displayed-equation img {
+        margin-left: 5px;
+        margin-right: 5px
+    }
+
+    .equationContainer {
+        height: auto;
+        overflow: auto;
+        padding-left: 10px;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box
+    }
+
+    #maincol .article-body > .equationContainer .equation {
+        display: inline-block;
+        max-width: 100%;
+        min-width: 770px
+    }
+
+    @media (max-width: 770px){#maincol .article-body > .equationContainer .equation {
+        min-width: 100%
+    }
+    }
+
+    p.equations, p.equation {
+        font-family: times new roman, Times, serif
+    }
+
+    .equationContainer.large p.equation {
+        font-family: times new roman, Times, serif;
+        font-size: 14px
+    }
+
+    .MathJax_Display, .MathJax_Display * {
+        -webkit-text-size-adjust: none
+    }
+
+    .MathJax_Display {
+        font-family: times new roman, Times, serif;
+        margin-top: 30px !important;
+        margin-bottom: 30px !important
+    }
+
+    td .MathJax_Display {
+        margin-top: 1em !important;
+        margin-bottom: 1em !important;
+        margin-left: 0 !important;
+        padding-right: 10px;
+        -webkit-text-size-adjust: none;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box
+    }
+
+    .scroll {
+        overflow: scroll
+    }
+
+    .tipSection {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        display: block;
+        float: left;
+        padding: 10px;
+        text-align: center;
+        width: 33.33333333%
+    }
+
+    .tipSection p {
+        text-align: center
+    }
+
+    .tipImage {
+        height: auto;
+        width: 80%
+    }
+
+    .tipRow {
+        position: relative
+    }
+
+    .thank-you .tipImage {
+        max-width: 200px
+    }
+
+    @media (max-width: 600px) {
+        .tipSection {
+            width: 100%
+        }
+
+        .tipImage {
+            height: auto;
+            max-width: 200px;
+            width: 80%
+        }
+
+        #buttonRow {
+            display: none
+        }
+    }
+
+    @media (min-width: 601px){#textRow .tipButton {
+        display: none
+    }
+    }</style>
+    <script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+    <script>(function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-40663237-1', 'auto');
+    ga('send', 'pageview');</script>
+    <script type=text/javascript src=https://neutrium.net/js/neutrium-tables.js></script>
+    <script type=text/javascript src=https://neutrium.net/js/neutrium-table-toggle.js></script>
+    <script type=text/javascript src=https://neutrium.net/js/syncscroll.js></script>
+</head>
+<body>
+<div id=header-container></div>
+<div id=main>
+    <div id=header-width><a class=noHover href=https://neutrium.net/>
+        <div id=mainheader>
+            <div class=main-icon>
+                <div class=main-icon-bg>f</div>
+                <div class=main-icon-fg></div>
+            </div>
+            <span>Neutrium</span></div>
+    </a></div>
+    <div class=clearfix></div>
+    <div class=top-nav><a class=top-nav-button href=https://neutrium.net/ title=articles>
+        <div class=top-nav-text>Articles</div>
+    </a><a class=top-nav-button href=https://neutrium.net/podcast/ title=podcast>
+        <div class=top-nav-text>Podcast</div>
+    </a><a class=top-nav-button href=https://neutrium.net/contact-us/ title=contact_us>
+        <div class=top-nav-text>Contact</div>
+    </a><a class=top-nav-button href=https://neutrium.net/donate/ title=donate>
+        <div class=top-nav-text>Donate</div>
+    </a></div>
+    <div class=clearfix></div>
+    <div id=maincol>
+        <div class=neutrium-title>Pressure Loss from Fittings - 3K Method</div>
+        <div class=article-body><h1 class=no-number>Summary</h1>
+            <p>Fittings such as elbows, tees, valves and reducers represent a significant component of the pressure loss
+                in most pipe systems. This article details the calculation of pressure losses through pipe fittings and
+                some minor equipment using the 3K method.</p>
+            <h1 id=definitions>Definitions</h1>
+            <table class=definitions>
+                <tbody>
+                <tr>
+                    <td width=40px>
+                        <script type=text/katex>D</script>
+                    </td>
+                    <td width=15px>:</td>
+                    <td>Internal diameter of pipe</td>
+                </tr>
+                <tr>
+                    <td>
+                        <script type=text/katex>D_{n}</script>
+                    </td>
+                    <td>:</td>
+                    <td>nominal diameter of pipe in inches</td>
+                </tr>
+                <tr>
+                    <td>
+                        <script type=text/katex>K</script>
+                    </td>
+                    <td>:</td>
+                    <td>Resistance Coefficient</td>
+                </tr>
+                <tr>
+                    <td>
+                        <script type=text/katex>K_{d}</script>
+                    </td>
+                    <td>:</td>
+                    <td>3K method constant</td>
+                </tr>
+                <tr>
+                    <td>
+                        <script type=text/katex>K_{\infty}</script>
+                    </td>
+                    <td>:</td>
+                    <td>3K method constant</td>
+                </tr>
+                <tr>
+                    <td>
+                        <script type=text/katex>K_{1}</script>
+                    </td>
+                    <td>:</td>
+                    <td>3K method constant</td>
+                </tr>
+                <tr>
+                    <td>
+                        <script type=text/katex>Re</script>
+                    </td>
+                    <td>:</td>
+                    <td>Reynolds number</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class=ad-container>
+                <hr>
+                <ins class="adsbygoogle responsive-ad" style=display:inline-block data-ad-client=ca-pub-8003335965866673
+                     data-ad-slot=9087997878></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                <hr>
+            </div>
+            <h1 id=introduction>Introduction</h1>
+            <p>The 3K method allows the user to characterise the pressure loss for flow through fittings in a pipe. As
+                the name suggests, three K coefficients are used to characterise the fitting, which when combined with
+                the flow conditions and the pipe diameter may be used to calculate the fitting <a
+                        href=https://neutrium.net/fluid-flow/pressure-loss-from-fittings-excess-head-k-method/ target=_blank>K
+                    value</a>. Once the K value has been determined the head or pressure loss through the fitting may be
+                calculated.</p>
+            <p>Like the 2K method, the 3K method is an improvement on the K value (excess head) method. While the 2K
+                method improves on the excess head method by characterising the change in pressure loss due to varying
+                Reynolds Number the 3K method further improves the accuracy of the pressure drop prediction by also
+                characterising the change in geometric proportions of a fitting as its size changes. This makes the 3K
+                method particularly accurate for a system with large (greater than DN300/12in) fittings.</p>
+            <p>For alternative methods of characterising pressure loss for flow through fittings and a discussion of
+                which method is most appropriate please refer to the <a
+                        href=https://neutrium.net/fluid-flow/pressure-loss-from-fittings-in-pipe-summary/ target=_blank>summary
+                    of methods for estimating pressure loss from fittings</a>.</p>
+            <h1 id=calculation-of-k-value-using-the-3k-method>Calculation of K value using the 3K Method</h1>
+            <p>The 3K method is an extension of the 2K method and therefore the Excess Head (K method). As such the 3K
+                method requires the 3K coefficients to be converted into a K value before the fitting pressure drop may
+                be calculated.</p>
+            <h2 id=formula-for-calculating-the-k-value-from-the-3k-method>Formula for Calculating the K Value from the
+                3K Method</h2>
+            <p>The K value may be calculated from the 3K coefficients as demonstrated in the equation below.</p>
+            <div class=equationContainer>
+                <p class=equation>
+                    <script type=text/katex>
+                         \displaystyle K=\frac{K_{1}}{Re}+K_{\infty}\left(1+\frac{K_{d}}{D_{n}^{0.3}}\right)
+                    </script>
+                </p>
+            </div>
+            <p>As you can see from the equation above the calculation of the K value depends on both the fluid Reynolds
+                number and the size of the fitting</p>
+            <div class=ad-container>
+                <hr>
+                <ins class="adsbygoogle responsive-ad" style=display:inline-block data-ad-client=ca-pub-8003335965866673
+                     data-ad-slot=9087997878></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                <hr>
+            </div>
+            <h2 id=table-of-3k-coefficients>Table of 3K Coefficients</h2>
+            <p>The table below contains the 3K parameters for a wide range of commonly encountered fittings</p>
+            <div class="articleTableContainerScrollFrame constrained">
+                <div class="articleTableHeader syncscroll"></div>
+                <div class="articleTableScroller syncscroll">
+                    <table class=centered>
+                        <thead>
+                        <tr>
+                            <th width=29%>Fitting</th>
+                            <th width=29%>Types</th>
+                            <th class=centered width=8%>
+                                <script type=text/katex>K_{1}</script>
+                            </th>
+                            <th class=centered width=8%>
+                                <script type=text/katex>K_{\infty}</script>
+                            </th>
+                            <th class=centered width=8%>
+                                <script type=text/katex>K_{d}</script>
+                                (in<sup>0.3</sup>)
+                            </th>
+                            <th class=centered width=8%>
+                                <script type=text/katex>K_{d}</script>
+                                (mm<sup>0.3</sup>)
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td rowspan=2>90° Elbow, Threaded</td>
+                            <td>Standard Radius (R/D = 1)</td>
+                            <td class=centered>800</td>
+                            <td class=centered>0.14</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>Long Radius (R/D = 1.5)</td>
+                            <td class=centered>800</td>
+                            <td class=centered>0.071</td>
+                            <td class=centered>4.2</td>
+                            <td class=centered>11.1</td>
+                        </tr>
+                        <tr>
+                            <td rowspan=4>90° Elbow, Flanged or Welded</td>
+                            <td>Standard Radius (R/D = 1)</td>
+                            <td class=centered>800</td>
+                            <td class=centered>0.091</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>Long Radius (R/D = 2)</td>
+                            <td class=centered>800</td>
+                            <td class=centered>0.056</td>
+                            <td class=centered>3.9</td>
+                            <td class=centered>10.3</td>
+                        </tr>
+                        <tr>
+                            <td>Long Radius (R/D = 4)</td>
+                            <td class=centered>800</td>
+                            <td class=centered>0.066</td>
+                            <td class=centered>3.9</td>
+                            <td class=centered>10.3</td>
+                        </tr>
+                        <tr>
+                            <td>Long Radius (R/D = 6)</td>
+                            <td class=centered>800</td>
+                            <td class=centered>0.075</td>
+                            <td class=centered>4.2</td>
+                            <td class=centered>11.1</td>
+                        </tr>
+                        <tr>
+                            <td rowspan=3>90° Elbow, Mitered</td>
+                            <td>1 weld 90°</td>
+                            <td class=centered>1000</td>
+                            <td class=centered>0.27</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>2 welds 45°</td>
+                            <td class=centered>800</td>
+                            <td class=centered>0.068</td>
+                            <td class=centered>4.1</td>
+                            <td class=centered>10.8</td>
+                        </tr>
+                        <tr>
+                            <td>3 welds 30°</td>
+                            <td class=centered>800</td>
+                            <td class=centered>0.035</td>
+                            <td class=centered>4.2</td>
+                            <td class=centered>11.1</td>
+                        </tr>
+                        <tr>
+                            <td rowspan=2>45° Elbow, Threaded</td>
+                            <td>Standard Radius (R/D = 1)</td>
+                            <td class=centered>500</td>
+                            <td class=centered>0.071</td>
+                            <td class=centered>4.2</td>
+                            <td class=centered>11.1</td>
+                        </tr>
+                        <tr>
+                            <td>Long Radius (R/D = 1.5)</td>
+                            <td class=centered>500</td>
+                            <td class=centered>0.052</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td rowspan=2>45° Elbow, Mitered</td>
+                            <td>1 weld 45°</td>
+                            <td class=centered>500</td>
+                            <td class=centered>0.086</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>2 welds 22.5°</td>
+                            <td class=centered>500</td>
+                            <td class=centered>0.052</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td rowspan=3>180° Bend</td>
+                            <td>threaded, close-return (R/D = 1)</td>
+                            <td class=centered>1000</td>
+                            <td class=centered>0.23</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>flanged (R/D = 1)</td>
+                            <td class=centered>1000</td>
+                            <td class=centered>0.12</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>all types (R/D = 1.5)</td>
+                            <td class=centered>1000</td>
+                            <td class=centered>0.1</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td rowspan=4>Tee Through-branch as an Elbow</td>
+                            <td>threaded (r/D = 1)</td>
+                            <td class=centered>500</td>
+                            <td class=centered>0.274</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>threaded (r/D = 1.5)</td>
+                            <td class=centered>800</td>
+                            <td class=centered>0.14</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>flanged (r/D = 1)</td>
+                            <td class=centered>800</td>
+                            <td class=centered>0.28</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>stub-in branch</td>
+                            <td class=centered>1000</td>
+                            <td class=centered>0.34</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td rowspan=3>Tee Run-through</td>
+                            <td>threaded (r/D = 1)</td>
+                            <td class=centered>200</td>
+                            <td class=centered>0.091</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>flanged (r/D = 1)</td>
+                            <td class=centered>150</td>
+                            <td class=centered>0.05</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>stub-in branch</td>
+                            <td class=centered>100</td>
+                            <td class=centered>0</td>
+                            <td class=centered>0</td>
+                            <td class=centered>0</td>
+                        </tr>
+                        <tr>
+                            <td rowspan=2>Angle valve</td>
+                            <td>45°, full line size,
+                                <script type=text/katex>\beta</script>
+                                = 1
+                            </td>
+                            <td class=centered>950</td>
+                            <td class=centered>0.25</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>90° full line size,
+                                <script type=text/katex>\beta</script>
+                                = 1
+                            </td>
+                            <td class=centered>1000</td>
+                            <td class=centered>0.69</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>Globe valve</td>
+                            <td>standard,
+                                <script type=text/katex>\beta</script>
+                                = 1
+                            </td>
+                            <td class=centered>1500</td>
+                            <td class=centered>1.7</td>
+                            <td class=centered>3.6</td>
+                            <td class=centered>9.5</td>
+                        </tr>
+                        <tr>
+                            <td rowspan=3>Plug valve</td>
+                            <td>branch flow</td>
+                            <td class=centered>500</td>
+                            <td class=centered>0.41</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>straight through</td>
+                            <td class=centered>300</td>
+                            <td class=centered>0.084</td>
+                            <td class=centered>3.9</td>
+                            <td class=centered>10.3</td>
+                        </tr>
+                        <tr>
+                            <td>three-way (flow through)</td>
+                            <td class=centered>300</td>
+                            <td class=centered>0.14</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>Gate valve</td>
+                            <td>standard,
+                                <script type=text/katex>\beta</script>
+                                = 1
+                            </td>
+                            <td class=centered>300</td>
+                            <td class=centered>0.037</td>
+                            <td class=centered>3.9</td>
+                            <td class=centered>10.3</td>
+                        </tr>
+                        <tr>
+                            <td>Ball valve</td>
+                            <td>standard,
+                                <script type=text/katex>\beta</script>
+                                = 1
+                            </td>
+                            <td class=centered>300</td>
+                            <td class=centered>0.017</td>
+                            <td class=centered>3.5</td>
+                            <td class=centered>9.2</td>
+                        </tr>
+                        <tr>
+                            <td>Diaphragm</td>
+                            <td>dam type</td>
+                            <td class=centered>1000</td>
+                            <td class=centered>0.69</td>
+                            <td class=centered>4.9</td>
+                            <td class=centered>12.9</td>
+                        </tr>
+                        <tr>
+                            <td>Swing check valve</td>
+                            <td>Vmin = 35
+                                <script type=text/katex>[\rho \ (\text{lb}_{\text{m}}/\text{ft}^{3})]^{-1/2}</script>
+                            </td>
+                            <td class=centered>1500</td>
+                            <td class=centered>0.46</td>
+                            <td class=centered>4</td>
+                            <td class=centered>10.6</td>
+                        </tr>
+                        <tr>
+                            <td>Lift check valve</td>
+                            <td>Vmin = 40
+                                <script type=text/katex>[\rho \ (\text{lb}_{\text{m}}/\text{ft}^{3})]^{-1/2}</script>
+                            </td>
+                            <td class=centered>2000</td>
+                            <td class=centered>2.85</td>
+                            <td class=centered>3.8</td>
+                            <td class=centered>10</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class=ad-container>
+                <hr>
+                <ins class="adsbygoogle responsive-ad" style=display:inline-block data-ad-client=ca-pub-8003335965866673
+                     data-ad-slot=9087997878></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                <hr>
+            </div>
+            <h1 id=example-calculation-of-pressure-loss-using-3k-values>Example Calculation of Pressure Loss using
+                3K-values</h1>
+            <p>This example demonstrates how to use the 3K method to calculate the head loss through simple pipe and
+                fitting arrangement. The example uses water in system of standard weight carbon steel pipe. Note that
+                for this example we consider a flat system, with no elevation changes.</p>
+            <div class=image-container><img src=https://neutrium.net/images/fluid-flow/pipe-length-fittings-example.png
+                                            alt="Equivalent Length Example" style=max-width:506px;max-height:368px
+                                            class=size-full></div>
+            <h2 id=system-details>System details</h2>
+            <table>
+                <tbody>
+                <tr>
+                    <td>Pipe Size</td>
+                    <td>:</td>
+                    <td>DN100 (4")</td>
+                </tr>
+                <tr>
+                    <td>Pipe Diameter (Nominal)</td>
+                    <td>:</td>
+                    <td>4"</td>
+                </tr>
+                <tr>
+                    <td>Pipe Internal Diameter</td>
+                    <td>:</td>
+                    <td>102.3 mm</td>
+                </tr>
+                <tr>
+                    <td>Pipe Length</td>
+                    <td>:</td>
+                    <td>50 m</td>
+                </tr>
+                <tr>
+                    <td>Fittings</td>
+                    <td>:</td>
+                    <td>3 x 90° long radius (R/D = 2) flanged elbows</td>
+                </tr>
+                <tr>
+                    <td>Fluid Velocity</td>
+                    <td>:</td>
+                    <td>3 m/s</td>
+                </tr>
+                <tr>
+                    <td>Fluid Density</td>
+                    <td>:</td>
+                    <td>1000 kg/m<sup>3</sup></td>
+                </tr>
+                <tr>
+                    <td>Reynolds Number</td>
+                    <td>:</td>
+                    <td>306,900</td>
+                </tr>
+                <tr>
+                    <td>Friction Factor</td>
+                    <td>:</td>
+                    <td>0.018</td>
+                </tr>
+                <tr>
+                    <td>Gravitational Acceleration</td>
+                    <td>:</td>
+                    <td>9.81 m/s<sup>2</sup></td>
+                </tr>
+                </tbody>
+            </table>
+            <h2 id=calculation>Calculation</h2>
+            <p>Using the table of fittings and 3K-values above we find that the excess head or K-value for the 90°
+                elbow.</p>
+            <p>
+                <div class=equationContainer>
+            <p class=equation>
+                <script type=text/katex>
+                     \displaystyle K = \frac{K_{1}}{Re}+K_{\infty}\left(1+\frac{K_{d}}{D_{n}^{0.3}}\right)
+                </script>
+            </p>
+        </div>
+        <div class=equationContainer>
+            <p class=equation>
+                <script type=text/katex>
+                     \displaystyle K = \frac{800}{306,900}+0.056 \left(1+\frac{3.9}{4^{0.3}}\right)
+                </script>
+            </p>
+        </div>
+        <div class=equationContainer>
+            <p class=equation>
+                <script type=text/katex> \displaystyle K = 0.203 </script>
+            </p>
+        </div>
+        </p><p>With this we can calculate the head loss for a single elbow.</p>
+        <p>
+            <div class=equationContainer>
+        <p class=equation>
+            <script type=text/katex> \displaystyle h_{L} = K \frac{V^{2}}{2g} </script>
+        </p>
+    </div>
+    <div class=equationContainer>
+        <p class=equation>
+            <script type=text/katex> \displaystyle h_{L} = 0.203 \frac {3^{2}}{2 \times 9.81} </script>
+        </p>
+    </div>
+    <div class=equationContainer>
+        <p class=equation>
+            <script type=text/katex> \displaystyle h_{L} = 0.0931 \text{ m} </script>
+        </p>
+    </div>
+    </p><p>Using the equation for <a href=https://neutrium.net/fluid-flow/pressure-loss-in-pipe/ target=_blank>head loss
+    in pipe, we can calculate the loss through the straight piping</a>:</p>
+    <p>
+        <div class=equationContainer>
+    <p class=equation>
+        <script type=text/katex> \displaystyle h_{P} = f \frac{L}{D} \frac{V^{2}}{2g} </script>
+    </p>
+</div>
+<div class=equationContainer>
+    <p class=equation>
+        <script type=text/katex> \displaystyle h_{P} = 0.018 \frac{50}{102.3/1000} \frac{3^{2}}{2 \times 9.81} </script>
+    </p>
+</div>
+<div class=equationContainer>
+    <p class=equation>
+        <script type=text/katex> \displaystyle h_{P} = 4.03 \text{ m} </script>
+    </p>
+</div>
+</p><p>The total head loss for the system is the addition of the head loss from the pipe and the fittings.</p>
+<p>
+    <div class=equationContainer>
+<p class=equation>
+    <script type=text/katex> \displaystyle h_{T} = h_{P} + 3 \times h_{L} </script>
+</p>
+</div>
+<div class=equationContainer>
+    <p class=equation>
+        <script type=text/katex> \displaystyle h_{T} = 4.03 + 3 \times 0.0931 </script>
+    </p>
+</div>
+<div class=equationContainer>
+    <p class=equation>
+        <script type=text/katex> \displaystyle h_{T} = 4.30 \text{ m} </script>
+    </p>
+</div>
+</p><p>In the above example we first calculated the head loss for a single fitting and then multiplied by the number of
+    fittings. It is also correct to add or multiply the K-values of fittings and then covert to a pressure or head loss.
+    This is useful when there are many fittings of several types. However the 3K values must be converted to single K
+    values for each fitting type individually.</p>
+<div class=date-share-container><span class=article-date>Article Created: October 25, 2012</span>
+    <ul class=share-icons-ul>
+        <li><a class=share-link target=_blank
+               href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fneutrium.net%2ffluid-flow%2fpressure-loss-from-fittings-3k-method%2f&t=Pressure%20Loss%20from%20Fittings%20-%203K%20Method"><i
+                class=foundicon-facebook></i></a></li>
+        <li><a class=share-link target=_blank
+               href="http://twitter.com/share?text=Currently reading Pressure%20Loss%20from%20Fittings%20-%203K%20Method&url=https%3a%2f%2fneutrium.net%2ffluid-flow%2fpressure-loss-from-fittings-3k-method%2f"
+               title="Click to share this post on Twitter"><i class=foundicon-twitter></i></a></li>
+        <li><a class=share-link target=_blank
+               href="http://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fneutrium.net%2ffluid-flow%2fpressure-loss-from-fittings-3k-method%2f&title=Pressure%20Loss%20from%20Fittings%20-%203K%20Method&summary=&source=Neutrium"><i
+                class=foundicon-linkedin></i></a></li>
+    </ul>
+    <div class=clearfix></div>
+</div>
+<hr>
+<a class=h1div href=https://neutrium.net/tags/><span>Article Tags</span></a>
+<div class=clear></div>
+<div class=articleTags>
+    <div class=tagBubble><a class=noHover href=https://neutrium.net/tags/3k-method/ title="3K Method Tag"><span>3K Method</span></a>
+    </div>
+    <div class=tagBubble><a class=noHover href=https://neutrium.net/tags/elbow/ title="Elbow Tag"><span>Elbow</span></a>
+    </div>
+    <div class=tagBubble><a class=noHover href=https://neutrium.net/tags/excess-head/ title="Excess Head Tag"><span>Excess Head</span></a>
+    </div>
+    <div class=tagBubble><a class=noHover href=https://neutrium.net/tags/fitting/ title="Fitting
+                            Tag"><span>Fitting</span></a></div>
+    <div class=tagBubble><a class=noHover href=https://neutrium.net/tags/flow-rate/ title="Flow Rate Tag"><span>Flow Rate</span></a>
+    </div>
+    <div class=tagBubble><a class=noHover href=https://neutrium.net/tags/fluid-flow/ title="Fluid Flow Tag"><span>Fluid Flow</span></a>
+    </div>
+    <div class=tagBubble><a class=noHover href=https://neutrium.net/tags/head/ title="Head Tag"><span>Head</span></a>
+    </div>
+    <div class=tagBubble><a class=noHover href=https://neutrium.net/tags/pressure-drop/ title="Pressure Drop Tag"><span>Pressure Drop</span></a>
+    </div>
+    <div class=tagBubble><a class=noHover href=https://neutrium.net/tags/pressure-loss/ title="Pressure Loss Tag"><span>Pressure Loss</span></a>
+    </div>
+    <div class=tagBubble><a class=noHover href=https://neutrium.net/tags/valve/ title="Valve Tag"><span>Valve</span></a>
+    </div>
+</div>
+<form action="https://neutrium.us3.list-manage.com/subscribe/post?u=f2606a86e7c9c3e23cecb40aa&id=4200418eaf" method=post
+      id=mc-embedded-subscribe-form name=mc-embedded-subscribe-form class="validate maincol-width" target=_blank
+      novalidate><h1>Subscribe to our mailing list</h1>
+    <p>
+    <table style=width:100%>
+        <tr>
+            <td width=20%><span class=font-normal>Email</span></td>
+            <td width=80%><input type=email name=EMAIL class="field required email" id=mce-EMAIL style=width:90%></td>
+        </tr>
+        <tr>
+            <td width=20%><span class=font-normal>Name</span></td>
+            <td width=80%><input type=text name=FNAME class=field id=mce-FNAME style=width:90%></td>
+        </tr>
+    </table>
+    <div style=position:absolute;left:-5000px aria-hidden=true><input type=text
+                                                                      name=b_f2606a86e7c9c3e23cecb40aa_4200418eaf
+                                                                      tabindex=-1></div>
+    <div class=clear><input type=submit value=Subscribe name=subscribe id=mc-embedded-subscribe class="button positive">
+    </div>
+    </p></form>
+</div></div></div>
+<div class=clear></div>
+<div id=footer-outer>
+    <div id=footer-inner>&copy; 2020 <a href=http://nativedynamics.com.au>Native Dynamics</a> | <a
+            href=https://neutrium.net/contact-us/ title="Contact Us">Contact</a> | <a
+            href=https://neutrium.net/copyright-and-disclaimer/ title="Copyright and Disclaimer">Copyright and
+        Disclaimer</a></div>
+</div>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css
+      integrity=sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq crossorigin=anonymous>
+<script src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js
+        integrity=sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz
+        crossorigin=anonymous></script>
+<script>if (!('forEach' in Object.prototype)) {
+    Object.prototype.forEach = function (action, that) {
+        for (var i = 0, n = this.length; i < n; i++) {
+            if (i in this) {
+                action.call(that, this[i], i, this);
+            }
+        }
+    };
+}
+(function () {
+    var equationScripts = document.querySelectorAll('script[type="text/katex"]');
+    equationScripts.forEach(function (i) {
+        try {
+            var equationSpan = document.createElement("span");
+            katex.render(i.text, equationSpan);
+            insertAfter(equationSpan, i);
+        } catch (e) {
+            var equationSpan = document.createElement("span");
+            equationSpan.style.color = "red";
+            equationSpan.textContent = e;
+            insertAfter(equationSpan, i);
+        }
+    });
+})();
+
+function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}</script>
+</body>
+</html>

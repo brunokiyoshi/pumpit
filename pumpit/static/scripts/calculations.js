@@ -12,8 +12,20 @@ function calcKtot(){
     return Ktot;
 }
 
+function calcDeltaPfitting(Kinput){
+
+    let v;
+    const g = 9.81 // m/s²
+    return k*Math.pow(v,2)/2*g;
+}
+
+function calcArea(IDinput){
+
+}
+
 function calculateAll(){
     var Ktot = calcKtot();
+
 }
 
 const $systeminputs = $("[form='system-form'], #system-form");

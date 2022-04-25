@@ -41,15 +41,32 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
 .table-editable {
     overflow-x: auto;
     white-space: nowrap;
     font-size: .6em;
 }
-.btn-rm{
+
+.btn-rm {
     font-size: .6em;
 }
 
-h2{
+h2 {
     text-align: center;
+}
+
+.table-fitting-selection {
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 1em;
+}
+
+tbody.table-clickable tr {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+tbody.table-clickable tr:hover {
+
+    background-color: #46b8da;
 }
