@@ -1,6 +1,6 @@
 function setID($selectEl){
     const newIDinches = $selectEl.val();
-    const newIDmm = inch2mm(newIDinches);
+    const newIDmm = inch2milimiter(newIDinches);
 
     const $IDinput = $selectEl.parent().find(".pipe-ID-input");
     $IDinput.val(newIDmm);

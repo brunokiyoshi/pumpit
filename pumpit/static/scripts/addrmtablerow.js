@@ -10,7 +10,7 @@ for (let i = 0; i < tableIDs.length; i++) {
 
     // TODO: use better data structure instead of relying on indexes matching
     $(tableAddIDs[i]).on('click', 'i', () => {
-        const $clone = $tableID.find('tbody tr').last().clone(true).removeClass('hide table-line');
+        const $clone = $tableID.find('.tr-editable').last().clone(true).removeClass('hide table-line');
 
         if ($tableID.find('tbody tr').length === 0) {
             fetch("/getstdfittingstablerow").then(function (response) {
