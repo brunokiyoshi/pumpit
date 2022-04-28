@@ -14,7 +14,7 @@ def home():
     systemsvg = open(os.path.join('pumpit', 'static', 'svg', 'system.svg')).read()
     return render_template(
         'index.html',
-        title='Home Page',
+        title='Home',
         year=datetime.now().year,
         systemsvg=Markup(systemsvg)
     )
