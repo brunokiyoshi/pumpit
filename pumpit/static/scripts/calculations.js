@@ -42,7 +42,7 @@ function frictionFactor($pipesegmenttr) {
         if (solver === "newtonraphson") {
             let lastx;
             let cw=1;
-            let x = 100;
+            let x = 100; //TODO: implement initial guess calculation
             const err = 1e-5;
 
             let count = 1;
@@ -69,10 +69,13 @@ function calculateAll() {
     const rho = $densityinput.val();
     const $viscosityinput = $("#viscosityinput");
     const mu = $viscosityinput.val();
+
+
     for (let i = 0; i < pipesegments.length; i++) {
         const $pipesegmenttr = $(pipesegments[i]);
         let ID = $pipesegmenttr.find(".pipe-ID-input").last().val();
         ID = milimiter2meter(ID);
+        let L = $pipesegmenttr.find(".pipe-length-input").last().val();
         const CSarea = calcCSarea(ID);
         const vflow = $vflowinput.val() / hour2second(1);
         const velocity = calcVelocity(vflow, CSarea);
@@ -81,8 +84,11 @@ function calculateAll() {
         const Re = rho * ID * velocity / mu;
         const $reynoldsinput = $pipesegmenttr.find(".pipe-reynolds-input");
         $reynoldsinput.val(Re);
-        const f = frictionFactor($pipesegmenttr);
-        console.log(f)
+        const fd = frictionFactor($pipesegmenttr);
+        console.log(fd)
+
+        const deltaP = (L*fd*rho*velocity**2)/(2*ID);
+        $pipesegmenttr.find(".pipe-deltap-input").val(deltaP);
     }
 }
 
