@@ -80,15 +80,16 @@ function calculateAll() {
         const vflow = $vflowinput.val() / hour2second(1);
         const velocity = calcVelocity(vflow, CSarea);
         const $velocityinput = $pipesegmenttr.find(".pipe-velocity-input");
-        $velocityinput.val(velocity);
+        $velocityinput.val(velocity.toFixed(2));
         const Re = rho * ID * velocity / mu;
         const $reynoldsinput = $pipesegmenttr.find(".pipe-reynolds-input");
-        $reynoldsinput.val(Re);
-        const fd = frictionFactor($pipesegmenttr);
+        $reynoldsinput.val(Re.toFixed(2));
+        const fd = frictionFactor($pipesegmenttr).toFixed(2);
         console.log(fd)
 
-        const deltaP = (L*fd*rho*velocity**2)/(2*ID);
-        $pipesegmenttr.find(".pipe-deltap-input").val(deltaP);
+        let deltaP = (L*fd*rho*velocity**2)/(2*ID);
+        deltaP = deltaP/1000;
+        $pipesegmenttr.find(".pipe-deltap-input").val(deltaP.toFixed(4));
     }
 }
 

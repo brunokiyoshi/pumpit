@@ -48,9 +48,7 @@ input[type="checkbox"].input-validation-error {
     font-size: .6em;
 }
 
-.btn-rm {
-    font-size: .6em;
-}
+
 
 h2 {
     text-align: center;
@@ -69,4 +67,44 @@ tbody.table-clickable tr {
 tbody.table-clickable tr:hover {
 
     background-color: #46b8da;
+}
+
+.pipe-ID-input{
+    max-width: 70px;
+}
+.pipe-roughness-input{
+    max-width: 70px;
+}
+.pipe-length-input{
+    max-width: 50px;
+}
+.pipe-deltaz-input{
+    max-width: 50px;
+}
+.pipe-reynolds-input{
+    max-width: 80px;
+}
+.pipe-deltap-input{
+    max-width: 70px;
+}
+.pipe-velocity-input{
+    max-width: 60px;
+}
+.pipe-custom-material-text{
+    width: 197px;
+}
+.pipe-custom-type-text{
+    width: 249px;
+}
+#system-form input{
+    max-width: 191px;
+}
+.btn-inrow,.btn-rm{
+    font-size: inherit;
+    font-style: inherit;
+    /*margin-bottom: 3.5px;*/
+    /*^only way I found to allign to other inputs    */
+    height: 20.4px;
+    padding: 1px 2px 1px 2px;
+
 }
