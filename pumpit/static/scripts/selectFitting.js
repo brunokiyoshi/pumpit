@@ -1,4 +1,4 @@
-$('.table-clickable-1K').on('click', 'tr', function (e) {
+$(document).on('click', '.table-clickable-1K tr', function (e) {
     const tr1ktable = e.currentTarget;
     const fitting = tr1ktable.cells[0].textContent;
     const type = tr1ktable.cells[1].textContent;
