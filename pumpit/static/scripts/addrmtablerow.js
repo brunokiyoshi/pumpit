@@ -26,7 +26,9 @@ for (let i = 0; i < tableIDs.length; i++) {
                 console.log("Couldn't fetch std table row");
             });
         }
+        $clone.attr("data-uid", uuidv4())
         $tableID.find('table').append($clone);
+        updatePipeOptions()
         calculateAll();
     });
 

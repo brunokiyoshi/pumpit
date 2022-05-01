@@ -13,8 +13,8 @@ function calcVelocity(vflow, CSarea) {
 
 function calcKtot() {
     const $k_inputs = $(".fitting-k-input");
-    var Ktot = 0;
-    for (var i = 0; i < $k_inputs.length; i++) {
+    let Ktot = 0;
+    for (let i = 0; i < $k_inputs.length; i++) {
         $k = $k_inputs[i];
         k = $k.valueAsNumber;
         Ktot = Ktot + k;
@@ -60,7 +60,9 @@ function frictionFactor($pipesegmenttr) {
     }
     return f;
 }
+function recaculate3K(){
 
+}
 function calculateAll() {
     const Ktot = calcKtot();
     const pipesegments = $(".tr-editable-pipe");
@@ -90,6 +92,10 @@ function calculateAll() {
         let deltaP = (L*fd*rho*velocity**2)/(2*ID);
         deltaP = deltaP/1000;
         $pipesegmenttr.find(".pipe-deltap-input").val(deltaP.toFixed(4));
+    }
+    const $Kinputs3k = $("[data-is3k=true]");
+    for(let i=0;i<$Kinputs3k.length;i++){
+        calculate3Kmethod($Kinputs3k);
     }
 }
 

@@ -102,9 +102,17 @@ tbody.table-clickable tr:hover {
 .btn-inrow,.btn-rm{
     font-size: inherit;
     font-style: inherit;
-    /*margin-bottom: 3.5px;*/
-    /*^only way I found to allign to other inputs    */
     height: 20.4px;
     padding: 1px 2px 1px 2px;
 
+}
+.fitting-pipe-select{
+    width: 123px;
+}
+.pt-3-half{
+    vertical-align: middle;
+}
+
+.input-hidden{
+    display: none;
 }

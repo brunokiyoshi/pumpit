@@ -1,4 +1,8 @@
-<tr class="tr-editable">
+<tr class="tr-editable tr-fitting">
+    <td class="pt-3-half" contenteditable="false">
+        <select class="fitting-pipe-select fitting-prop" form="system-form" >
+        </select>
+    </td>
 
     <td class="pt-3-half" contenteditable="false">
         <input type="text" class="fitting-tag-input fitting-prop" form="system-form" value="VALVE01">
@@ -17,7 +21,10 @@
         <input type="text" class="fitting-custom-type-text fitting-prop" form="system-form"
                placeholder="Fitting type" disabled>
         K=<input type="number" class="fitting-k-input fitting-prop" form="system-form" value="40"
-                 onchange="calcDeltaPfitting(this)" disabled>
+                 onchange="calcDeltaPfitting(this)" data-is3k="false" disabled>
+        <input type="number" class="fitting-k1-input fitting-prop input-hidden" form="system-form">
+        <input type="number" class="fitting-kinf-input fitting-prop input-hidden" form="system-form">
+        <input type="number" class="fitting-kd-input fitting-prop input-hidden" form="system-form">
         <label class="text-center"><input type="checkbox" form="system-form" class="fitting-custom-type-checkbox fitting-prop"
                       onchange="setunsetcustomfitting(this)">Custom</label>
 
