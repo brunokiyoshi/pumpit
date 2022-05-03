@@ -113,11 +113,30 @@
 
             </div>
         </div>
+        <div class="row" id="row-total-deltaP">
+            <div class="col-md-6 form-group">
+
+            </div>
+            <div class="col-md-2 form-group">
+                <label for="total-fitting-deltaP"  >ΔPf (KPa)</label>
+                <input type="number" id="total-fitting-deltaP" class="form-control" disabled>
+            </div>
+            <div class="col-md-2 form-group">
+                <label for="total-piping-deltaP" >+ΔPp (KPa)</label>
+                <input type="number" id="total-piping-deltaP" class="form-control" disabled>
+            </div>
+            <div class="col-md-2 form-group">
+                <label for="total-system-deltaP" >=ΔPtot (KPa)</label>
+                <input type="number" id="total-system-deltaP" class="form-control" disabled>
+            </div>
+
+        </div>
     </div>
 
 
 {% endblock %}
 {% block scripts %}
+    <script src="./static/scripts/utils.js"></script>
     <script src="./static/scripts/addrmtablerow.js"></script>
     <script src="./static/scripts/checkboxEventFuncs.js"></script>
     <script src="./static/scripts/calculations.js"></script>

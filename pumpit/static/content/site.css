@@ -1,118 +1,149 @@
 body {
-    padding-top: 0;
-    padding-bottom: 20px;
+  padding-top: 0;
+  padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-top: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
-    max-width: 280px;
+  /*max-width: 280px;*/
 }
 
 /* styles for validation helpers */
 .field-validation-error {
-    color: #b94a48;
+  color: #b94a48;
 }
 
 .field-validation-valid {
-    display: none;
+  display: none;
 }
 
 input.input-validation-error {
-    border: 1px solid #b94a48;
+  border: 1px solid #b94a48;
 }
 
-input[type="checkbox"].input-validation-error {
-    border: 0 none;
+input[type=checkbox].input-validation-error {
+  border: 0 none;
 }
 
 .validation-summary-errors {
-    color: #b94a48;
+  color: #b94a48;
 }
 
 .validation-summary-valid {
-    display: none;
+  display: none;
 }
 
 .table-editable {
-    overflow-x: auto;
-    white-space: nowrap;
-    font-size: .6em;
+  overflow-x: auto;
+  white-space: nowrap;
+  font-size: 0.6em;
 }
 
-
-
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .table-fitting-selection {
-    overflow-x: auto;
-    white-space: nowrap;
-    font-size: 1em;
+  overflow-x: auto;
+  white-space: nowrap;
+  font-size: 1em;
 }
 
 tbody.table-clickable tr {
-    cursor: pointer;
-    transition: background-color 0.2s;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
+
 tbody.table-clickable tr:hover {
-
-    background-color: #46b8da;
+  background-color: #46b8da;
 }
 
-.pipe-ID-input{
-    max-width: 70px;
-}
-.pipe-roughness-input{
-    max-width: 70px;
-}
-.pipe-length-input{
-    max-width: 50px;
-}
-.pipe-deltaz-input{
-    max-width: 50px;
-}
-.pipe-reynolds-input{
-    max-width: 80px;
-}
-.pipe-deltap-input{
-    max-width: 70px;
-}
-.pipe-velocity-input{
-    max-width: 60px;
-}
-.pipe-custom-material-text{
-    width: 197px;
-}
-.pipe-custom-type-text{
-    width: 249px;
-}
-#system-form input{
-    max-width: 191px;
-}
-.btn-inrow,.btn-rm{
-    font-size: inherit;
-    font-style: inherit;
-    height: 20.4px;
-    padding: 1px 2px 1px 2px;
-
-}
-.fitting-pipe-select{
-    width: 123px;
-}
-.pt-3-half{
-    vertical-align: middle;
+.pipe-ID-input {
+  max-width: 70px;
 }
 
-.input-hidden{
-    display: none;
+.pipe-roughness-input {
+  max-width: 70px;
 }
+
+.pipe-length-input {
+  max-width: 50px;
+}
+
+.pipe-deltaz-input {
+  max-width: 50px;
+}
+
+.pipe-reynolds-input {
+  max-width: 80px;
+}
+
+.pipe-deltap-input {
+  max-width: 70px;
+}
+
+.fitting-deltap-input {
+  max-width: 70px;
+}
+
+.pipe-velocity-input {
+  max-width: 60px;
+}
+
+.pipe-custom-material-text {
+  width: 197px;
+}
+
+.pipe-custom-type-text {
+  width: 249px;
+}
+
+#system-form input {
+  max-width: 191px;
+}
+
+.btn-inrow, .btn-rm {
+  font-size: inherit;
+  font-style: inherit;
+  height: 20.4px;
+  padding: 1px 2px 1px 2px;
+}
+
+.fitting-pipe-select {
+  width: 123px;
+}
+
+.pt-3-half {
+  vertical-align: middle;
+}
+
+.input-hidden {
+  display: none;
+}
+
+.fitting-k-input {
+  width: 70px;
+}
+
+.fitting-custom-type-text {
+  width: 200px;
+}
+
+.pipe-type-select {
+  width: 120px;
+}
+
+.pipe-material-select, .pipe-custom-material-text {
+  width: 90px;
+}
+
+/*# sourceMappingURL=site.css.map */

@@ -10,3 +10,6 @@ function hour2second(hour){
     return hour*3600;
 }
 
+function mwg2Kpa(mwg){
+    return mwg*9.80638+101.325;
+}

@@ -11,41 +11,10 @@ $(document).on('click', '.table-clickable-1K tr', function (e) {
     $fittingKInput.value = K;
     $fittingKInput.attr("data-is3k","false")
     colorclickedrow(e);
+    calculateAll();
 })
 
-function calculate3Kmethod($fittingKInput) {
-    const ID=getFittingIDFromAnywhereInTr($fittingKInput);
-    const Re=getFittingReynoldsFromAnywhereInTr($fittingKInput);
-    const K1 = upDownFetcher($fittingKInput, ".tr-fitting", ".fitting-k1-input").last().val();
-    const Kd = upDownFetcher($fittingKInput, ".tr-fitting", ".fitting-kd-input").last().val();
-    const Kinf = upDownFetcher($fittingKInput, ".tr-fitting", ".fitting-kinf-input").last().val();
-    const K=(K1/Re)+Kinf*(1+(Kd/(ID**0.3)));
-    $fittingKInput.val(K);
-    return K;
-}
 
-function upDownFetcher($el, selectorUp, selectorDown){
-    const $targetup = $el.closest(selectorUp);
-    return $targetup.find(selectorDown);
-}
-
-function getFittingReynoldsFromAnywhereInTr($el) {
-
-    const $fittingtr = $el.closest(".tr-fitting");
-    const $fittingpipeselect = $fittingtr.find(".fitting-pipe-select");
-    const pipeuid = $fittingpipeselect.val();
-    const $pipetr = $(document).find("[data-uid="+ pipeuid + "]").last();
-    return $pipetr.find(".pipe-reynolds-input").last().val();
-}
-
-function getFittingIDFromAnywhereInTr($el) {
-
-    const $fittingtr = $el.closest(".tr-fitting");
-    const $fittingpipeselect = $fittingtr.find(".fitting-pipe-select");
-    const pipeuid = $fittingpipeselect.val();
-    const $pipetr = $(document).find("[data-uid="+ pipeuid + "]").last();
-    return $pipetr.find(".pipe-ID-input").last().val();
-}
 
 
 
@@ -69,10 +38,11 @@ $(document).on('click', '.table-clickable-3K tr', function (e) {
     $fittingK1fInput.value = K1;
     $fittingKdfInput.value = Kd;
 
-    calculate3Kmethod($fittingKInput);
+    calc3Kmethod($fittingKInput);
 
     $fittingKInput.attr("data-is3k","true")
     colorclickedrow(e);
+    calculateAll();
 })
 
 function colorclickedrow(e) {

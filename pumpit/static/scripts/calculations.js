@@ -1,5 +1,48 @@
-function calcReynolds() {
+function calcTotalDeltaPFittings(){
+    const fittingDeltaPs=$(".fitting-deltap-input");
+    let TotalDeltaPFittings=0;
+    for(let i=0;i<fittingDeltaPs.length;i++){
+        const newdp=parseFloat($(fittingDeltaPs[i]).val());
+        TotalDeltaPFittings = TotalDeltaPFittings+newdp;
+    }
+    $("#total-fitting-deltaP").val(TotalDeltaPFittings);
+    return TotalDeltaPFittings;
+}
 
+function calcTotalDeltaPPiping(){
+    const pipingDeltaPs=$(".pipe-deltap-input");
+    let TotalDeltaPPiping=0;
+    for(let i=0;i<pipingDeltaPs.length;i++){
+        const newdp = parseFloat($(pipingDeltaPs[i]).val());
+        TotalDeltaPPiping = TotalDeltaPPiping + newdp;
+    }
+    $("#total-piping-deltaP").val(TotalDeltaPPiping);
+    return TotalDeltaPPiping;
+}
+
+function calcTotalDeltaP(){
+    const totalDeltaP = (calcTotalDeltaPPiping()+calcTotalDeltaPFittings())
+    $("#total-system-deltaP").val(totalDeltaP);
+    return(totalDeltaP);
+}
+
+function calc3Kmethod($fittingKInput) {
+    const ID=getFittingIDFromAnywhereInTr($fittingKInput);
+    const Re=getFittingReynoldsFromAnywhereInTr($fittingKInput);
+    const K1 = upDownFetcher($fittingKInput, ".tr-fitting", ".fitting-k1-input").last().val();
+    const Kd = upDownFetcher($fittingKInput, ".tr-fitting", ".fitting-kd-input").last().val();
+    const Kinf = upDownFetcher($fittingKInput, ".tr-fitting", ".fitting-kinf-input").last().val();
+    const K=(K1/Re)+Kinf*(1+(Kd/(ID**0.3)));
+    $fittingKInput.val(K.toFixed(4));
+    return K;
+}
+
+function calculateHf($fitting){
+    const K = $fitting.find(".fitting-k-input").val();
+    const velocity = getFittingVelocityFromAnywhereInTr($fitting);
+    const Hf = K*velocity**2/(2*9.81);
+    $fitting.find(".fitting-deltap-input").val(mwg2Kpa(Hf).toFixed(4));
+    return Hf;
 }
 
 function calcCSarea(ID) {
@@ -95,11 +138,19 @@ function calculateAll() {
     }
     const $Kinputs3k = $("[data-is3k=true]");
     for(let i=0;i<$Kinputs3k.length;i++){
-        calculate3Kmethod($Kinputs3k);
+        calc3Kmethod($Kinputs3k);
+
     }
+    const fittings=$('.tr-fitting')
+    for(let i=0;i<fittings.length;i++){
+        const $fitting = $(fittings[i]);
+        calculateHf($fitting);
+    }
+    calcTotalDeltaP();
 }
 
 const $systeminputs = $("[form='system-form'], #system-form");
 for (let i = 0; i < $systeminputs.length; i++) {
     $systeminputs[i].addEventListener("change", calculateAll);
 }
+$(document).on("ready",calculateAll);

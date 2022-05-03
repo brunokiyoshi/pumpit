@@ -19,8 +19,8 @@
 
         {% include "modalfittingselection.html" %}
         <input type="text" class="fitting-custom-type-text fitting-prop" form="system-form"
-               placeholder="Fitting type" disabled>
-        K=<input type="number" class="fitting-k-input fitting-prop" form="system-form" value="40"
+               placeholder="Fitting type" value="Globe valve, Bevel seat, open" disabled>
+        K=<input type="number" class="fitting-k-input fitting-prop" form="system-form" value="6"
                  onchange="calcDeltaPfitting(this)" data-is3k="false" disabled>
         <input type="number" class="fitting-k1-input fitting-prop input-hidden" form="system-form">
         <input type="number" class="fitting-kinf-input fitting-prop input-hidden" form="system-form">
@@ -31,7 +31,7 @@
     </td>
 
     <td class="pt-3-half" contenteditable="false">
-        <input type="number" class="fitting-deltap-input fitting-prop" form="system-form" value="3.7310" disabled>mwg
+        <input type="number" class="fitting-deltap-input fitting-prop " form="system-form" value="106.79" disabled>
         <label><input type="checkbox" form="system-form" class="fitting-set-deltap-input">Set</label>
     </td>
     <td class="pt-3-half">
