@@ -43,6 +43,7 @@ for (let i = 0; i < tableIDs.length; i++) {
         } else {
             $(this).parents('tr').detach();
         }
+        updatePipeOptions()
         calculateAll();
     });
 

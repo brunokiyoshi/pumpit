@@ -1,3 +1,21 @@
+function calcTotalDeltaZ(){
+    const $pipingDeltaZs = $(".pipe-deltaz-input");
+    let totalDeltaZ=0;
+    for (let i=0;i<$pipingDeltaZs.length;i++){
+        const $pipe = $pipingDeltaZs[i];
+        const dZ = parseFloat($pipe.val());
+        totalDeltaZ = totalDeltaZ+dZ;
+    }
+    return totalDeltaZ;
+}
+
+function calcStaticHead(){
+    const deltaZPiping=calcTotalDeltaZ();
+    //TODO: if target tank is fed from bottom: add tank height to delta Z
+    const rho=parseFloat($("#densityinput").val());
+    return rho*9.81*deltaZPiping;
+}
+
 function calcTotalDeltaPFittings(){
     const fittingDeltaPs=$(".fitting-deltap-input");
     let TotalDeltaPFittings=0;
@@ -103,11 +121,8 @@ function frictionFactor($pipesegmenttr) {
     }
     return f;
 }
-function recaculate3K(){
 
-}
 function calculateAll() {
-    const Ktot = calcKtot();
     const pipesegments = $(".tr-editable-pipe");
     const $vflowinput = $("#vflowinput");
     const $densityinput = $("#densityinput");
@@ -115,12 +130,11 @@ function calculateAll() {
     const $viscosityinput = $("#viscosityinput");
     const mu = $viscosityinput.val();
 
-
     for (let i = 0; i < pipesegments.length; i++) {
         const $pipesegmenttr = $(pipesegments[i]);
         let ID = $pipesegmenttr.find(".pipe-ID-input").last().val();
         ID = milimiter2meter(ID);
-        let L = $pipesegmenttr.find(".pipe-length-input").last().val();
+        const L = $pipesegmenttr.find(".pipe-length-input").last().val();
         const CSarea = calcCSarea(ID);
         const vflow = $vflowinput.val() / hour2second(1);
         const velocity = calcVelocity(vflow, CSarea);
@@ -147,6 +161,8 @@ function calculateAll() {
         calculateHf($fitting);
     }
     calcTotalDeltaP();
+    calcStaticHead();
+    calcStaticHead();
 }
 
 const $systeminputs = $("[form='system-form'], #system-form");
